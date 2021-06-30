@@ -7,7 +7,7 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface CallToActionComponent {
-        "test": string;
+        "mainClassName": string;
     }
     interface ExampleComponent {
         "exampleProp": string;
@@ -33,7 +33,7 @@ declare global {
 }
 declare namespace LocalJSX {
     interface CallToActionComponent {
-        "test"?: string;
+        "mainClassName"?: string;
     }
     interface ExampleComponent {
         "exampleProp"?: string;

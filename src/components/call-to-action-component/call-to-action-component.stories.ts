@@ -15,5 +15,5 @@ export default {
 };
 
 export const empty = (): string => `
-  <call-to-action-component test="this is a test"></call-to-action-component>
+  <call-to-action-component mainClassName="CtA"></call-to-action-component>
 `;
