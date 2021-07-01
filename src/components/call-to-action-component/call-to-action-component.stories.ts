@@ -15,5 +15,9 @@ export default {
 };
 
 export const empty = (): string => `
-  <call-to-action-component main-headline="CtA - main Conversion" background-image="https://simbr.xyz/images/dreams.jpg"></call-to-action-component>
+  <call-to-action-component main-headline="CtA - main Conversion" background-image="https://simbr.xyz/images/dreams.jpg" button-text="Link button">
+  <p slot="textHeadline">A wonderful serenity has taken possession</p>
+  <p slot="text">A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</p>
+  <p slot="dropoutHeadline">Contact us</p>
+  </call-to-action-component>
 `;
