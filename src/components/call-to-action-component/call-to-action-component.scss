@@ -1,3 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap');
+
 :host {
   display: block;
+  //height: 200vh;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.headline {
+  box-sizing: border-box;
+  margin-left: 20%;
+  padding-left: 6px;
+  border-left: 3px solid rgb(228, 0, 69);
+  font-size: 36px;
+}
+
+.content {
+  display: block;
+  position: relative;
+  width: 100%;
+  min-height: 640px;
+  margin: 32px 0;
+
+  .textContainer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    margin: 16px 0;
+    padding-left: 20%;
+    background-color: rgba(236, 237, 233, .5);
+
+    &-wrapper {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    &-headline {
+      width: 50%;
+      font-size: 24px;
+    }
+
+    &-text {
+      width: 50%;
+      font-size: 16px;
+    }
+
+    &-button {
+      margin: 16px 0;
+      padding: 6px;
+      border: 1px solid black;
+      font-size: 16px;
+      color: rgb(236, 237, 233);
+      background-color: black;
+      transition: all .1s linear;
+
+      &:hover {
+        color: black;
+        background-color: rgb(236, 237, 233);
+      }
+    }
+  }
+
+  .imageContainer {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin: 16px 0;
+    transform: translateX(0);
+    background-color: rgb(236, 237, 233);
+    background-size: cover;
+    background-position: 50%;
+  }
+}
+
+.dropout {
+  display: none;
+  position: relative;
+  width: 100%;
+  min-height: 400px;
+  padding: 10px 20%;
+  box-sizing: border-box;
+  background-color: rgb(48, 60, 84);
+
+  &-headline {
+    display: inline-block;
+    font-size: 24px;
+    color: rgb(236, 237, 233);
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid rgb(48, 60, 84);
+    transform: translateY(-100%);
+  }
+
+  &_open {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 950px) {
+  .headline {
+    margin-left: 10%;
+  }
+
+  .content {
+    .textContainer {
+      width: 50%;
+      background-color: rgb(236, 237, 233);
+      padding: 0 10%;
+    }
+
+    .imageContainer {
+      width: 50%;
+      transform: translateX(100%);
+    }
+  }
+
+  .dropout {
+    padding: 10px 10%;
+  }
 }
