@@ -15,5 +15,5 @@ export default {
 };
 
 export const empty = (): string => `
-  <call-to-action-component mainClassName="CtA"></call-to-action-component>
+  <call-to-action-component main-headline="CtA - main Conversion" background-image="https://simbr.xyz/images/dreams.jpg"></call-to-action-component>
 `;

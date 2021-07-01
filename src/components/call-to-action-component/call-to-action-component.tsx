@@ -1,5 +1,5 @@
 import {
-  Component, h, Prop,
+  Component, h, Prop, State, Listen,
 } from '@stencil/core';
 
 @Component({
@@ -8,33 +8,42 @@ import {
   shadow: true,
 })
 export class CallToActionComponent {
-  @Prop() mainClassName: string;
+  @Prop() mainHeadline: string;
+
+  @Prop() backgroundImage: string;
+
+  @State() open: boolean;
+
+  @Listen('click', { capture: true })
+  toggleDropout() {
+    this.open = !this.open;
+  }
 
   render(): JSX.Element {
-    const mainHeadline = 'CtA - main Conversion';
     const contentHeadline = 'A wonderful serenity has taken possession';
-    const contentText = 'A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend, so absorbed in the exquisite sense of mere tranquil existence, that I neglect my talents.';
+    const contentText = 'A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.';
 
     return (
-      <div class={this.mainClassName}>
-        <h1 class="headline">{mainHeadline}</h1>
+      <div>
+        <h1 class="headline">{this.mainHeadline}</h1>
         <div class="content">
+          <div
+            class="imageContainer"
+            style={{ backgroundImage: `url(${this.backgroundImage})` }}
+          ></div>
           <div class="textContainer">
-            <h2 class="textContainer-headline">{contentHeadline}</h2>
-            <p class="textContainer-text">{contentText}</p>
-            <button class="textContainer-button">
-              <a>link button</a>
-            </button>
+            <div class="textContainer-wrapper">
+              <h2 class="textContainer-headline">{contentHeadline}</h2>
+              <p class="textContainer-text">{contentText}</p>
+              <button class="textContainer-button" onClick={this.toggleDropout}>
+                <a>Link button</a>
+              </button>
+            </div>
           </div>
-          <div class="imageContainer">
-            <img src="https://simbr.xyz/images/dreams.jpg" alt="" />
-          </div>
-          <div class="dropout">
-            <h2 class="dropout-headline"></h2>
-            <ul class="dropout-content">
-              <li class="dropout-content-element">A wonderful serenity</li>
-            </ul>
-          </div>
+        </div>
+        <div class={this.open ? 'dropout dropout_open' : 'dropout'}>
+          <h2 class="dropout-headline">Contact us</h2>
+          <slot name="dropoutContent"></slot>
         </div>
       </div>
     );

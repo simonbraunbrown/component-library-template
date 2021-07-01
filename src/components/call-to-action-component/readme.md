@@ -7,9 +7,10 @@
 
 ## Properties
 
-| Property        | Attribute         | Description | Type     | Default     |
-| --------------- | ----------------- | ----------- | -------- | ----------- |
-| `mainClassName` | `main-class-name` |             | `string` | `undefined` |
+| Property          | Attribute          | Description | Type     | Default     |
+| ----------------- | ------------------ | ----------- | -------- | ----------- |
+| `backgroundImage` | `background-image` |             | `string` | `undefined` |
+| `mainHeadline`    | `main-headline`    |             | `string` | `undefined` |
 
 
 ----------------------------------------------
