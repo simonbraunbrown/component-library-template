@@ -41,6 +41,7 @@ export class CallToActionComponent {
           </div>
         </div>
         <div class={this.open ? 'dropout dropout_open' : 'dropout'}>
+          <button class="dropout-closeButton" onClick={this.toggleDropout}></button>
           <h2 class="dropout-headline"><slot name="dropoutHeadline"/></h2>
           <slot name="dropoutContent"></slot>
         </div>
